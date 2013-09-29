@@ -16,5 +16,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency "text-table"
+  s.add_dependency "mail"
   s.add_development_dependency "rspec"
 end

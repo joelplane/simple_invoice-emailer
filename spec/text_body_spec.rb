@@ -20,8 +20,8 @@ module SimpleInvoice::Emailer
                         :contact => contact,
                         :line_items => line_items
     end
-    let(:organisation) do
-      double 'organisation', :name => "Business"
+    let(:mail_config) do
+      {:organisation_name => "Business"}
     end
 
     example do
@@ -43,7 +43,7 @@ module SimpleInvoice::Emailer
         "+-------------+--------+----------+---------+\n" \
         "| Total                           | $110.00 |\n" \
         "+-------------+--------+----------+---------+"
-      SimpleInvoice::Emailer::TextBody.new(invoice, organisation).email_body.strip.should == expected_output
+      SimpleInvoice::Emailer::TextBody.new(invoice, mail_config).email_body.strip.should == expected_output
     end
 
   end

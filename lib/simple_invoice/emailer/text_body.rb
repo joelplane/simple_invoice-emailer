@@ -3,9 +3,9 @@ module SimpleInvoice
     class TextBody
 
       # @param invoice [SimpleInvoice::Invoice]
-      def initialize invoice, organisation
+      def initialize invoice, mail_config=MailConfig
         @invoice = invoice
-        @organisation = organisation
+        @mail_config = mail_config
       end
 
       # @return [String]
@@ -27,7 +27,7 @@ module SimpleInvoice
       end
 
       def preamble
-        "This email is an invoice for services by #{@organisation.name}."
+        "This email is an invoice for services by #{@mail_config[:organisation_name]}."
       end
 
       def postscript
