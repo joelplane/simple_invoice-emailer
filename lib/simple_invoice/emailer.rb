@@ -10,8 +10,8 @@ module SimpleInvoice
     autoload :MailConfig, "simple_invoice/emailer/mail_config"
 
     # @param invoice [SimpleInvoice::Invoice]
-    def self.deliver invoice
-
+    def self.deliver! invoice
+      Mailer.new.deliver! invoice
     end
 
   end
