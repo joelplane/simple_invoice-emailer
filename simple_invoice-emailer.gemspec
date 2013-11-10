@@ -3,10 +3,10 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "simple_invoice-emailer"
-  s.version     = "0.0.0"
+  s.version     = "0.0.1"
   s.authors     = ["Joel Plane"]
   s.email       = ["joel.plane@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/joelplane/simple_invoice-emailer"
   s.summary     = %q{emailer for SimpleInvoice}
   s.description = %q{sends SimpleInvoices via email}
 
