@@ -15,7 +15,7 @@ module SimpleInvoice
       private
 
       def mail_instance invoice
-        _email_from = @mail_config[:email_from]
+        _email_from = get_config(:email_from)
         _email_subject = email_subject(invoice)
         _email_body = email_body(invoice)
         Mail.new do
@@ -31,7 +31,13 @@ module SimpleInvoice
       end
 
       def email_subject invoice
-        @mail_config[:email_subject][invoice]
+        get_config(:email_subject)[invoice]
+      end
+
+      def get_config key
+        @mail_config[key].tap do |value|
+          raise "Missing config key #{key}" if value.nil?
+        end
       end
 
     end
