@@ -26,6 +26,11 @@ module SimpleInvoice
           instance[:organisation_name] = name
         end
 
+        # @param email [String]
+        def email_bcc email
+          instance[:email_bcc] = email
+        end
+
       end
 
       def initialize
